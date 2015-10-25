@@ -25,15 +25,15 @@ X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
 subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 
-names(X_test) = features
+names(X_test) <- features
 
 # Extract only mean and standard deviation
-X_test = X_test[,extract_features]
+X_test <- X_test[,extract_features]
 
 # Get activity labels
-y_test[,2] = activity_labels[y_test[,1]]
-names(y_test) = c("Activity_ID", "Activity_Label")
-names(subject_test) = "subject"
+y_test[,2] <- activity_labels[y_test[,1]]
+names(y_test) <- c("Activity_ID", "Activity_Label")
+names(subject_test) <- "subject"
 
 # Bind data
 test_data <- cbind(as.data.table(subject_test), y_test, X_test)
@@ -44,15 +44,15 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
 
 subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 
-names(X_train) = features
+names(X_train) <- features
 
 # Extract mean and standard deviation
-X_train = X_train[,extract_features]
+X_train <- X_train[,extract_features]
 
 # Get activity data
-y_train[,2] = activity_labels[y_train[,1]]
-names(y_train) = c("Activity_ID", "Activity_Label")
-names(subject_train) = "subject"
+y_train[,2] <- activity_labels[y_train[,1]]
+names(y_train) <- c("Activity_ID", "Activity_Label")
+names(subject_train) <- "subject"
 
 # Bind data
 train_data <- cbind(as.data.table(subject_train), y_train, X_train)

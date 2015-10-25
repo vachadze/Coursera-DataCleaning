@@ -58,13 +58,13 @@ names(subject_train) = "subject"
 train_data <- cbind(as.data.table(subject_train), y_train, X_train)
 
 # Merge test and train
-data = rbind(test_data, train_data)
+data <- rbind(test_data, train_data)
 
-id_labels   = c("subject", "Activity_ID", "Activity_Label")
-data_labels = setdiff(colnames(data), id_labels)
-melted_data      = melt(data, id = id_labels, measure.vars = data_labels)
+id_labels <- c("subject", "Activity_ID", "Activity_Label")
+data_labels <- setdiff(colnames(data), id_labels)
+melted_data <- melt(data, id = id_labels, measure.vars = data_labels)
 
 # Apply mean function to dataset using dcast function
-tidy_data   = dcast(melted_data, subject + Activity_Label ~ variable, mean)
+tidy_data <- dcast(melted_data, subject + Activity_Label ~ variable, mean)
 
 write.table(tidy_data, file = "./tidy_dataset.txt", row.name=FALSE)

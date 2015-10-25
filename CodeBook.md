@@ -65,9 +65,9 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
 * You should run a script from file called _*run_analysis.R*_ that does the following. 
   * checks / loads required packeges _*data.table*_ and _*reshaper2*_
   * gets activity lables and features, leaving only mean and std
-  * reads, processes and binds test data, adding appropriate acivity and subject
-  * reads, processes and binds train data, adding appropriate acivity and subject
-  * Merges the training and the test sets to create one data set viaa melp function from reshapr2 package
+  * reads, processes and binds test data, adding appropriate activity and subject
+  * reads, processes and binds train data, adding appropriate activity and subject
+  * Merges the training and the test sets to create one data set via melt function from reshaper2 package
   * Creates a second, independent tidy data set with the average of each variable for each activity and each subject via dcast function from reshaper2 package, and writes in to the tidy_dataset.txt file
 * File called _*tidy_dataset.txt*_ will be generated in the working direcotry, containing resulting clean data according to the course project requirements
 
